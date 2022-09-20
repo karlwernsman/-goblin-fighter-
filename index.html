@@ -14,7 +14,12 @@
         <script type="module" src="app.js"></script>
 
         <!-- fonts -->
-        <!-- see https://fonts.google.com/ -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- css -->
         <link rel="stylesheet" href="styles/reset.css" />
@@ -33,18 +38,17 @@
             <section id="scoreboard" class="messages">You have not made any connections.</section>
             <section id="message-display" class="messages">Select someone to chat with.</section>
             <div class="people">
-                <section id="player" class="people">
-                    <p>Emotional capacity:</p>
-                    <br />
-                    <p id="'emotional-capacity">10</p>
-                    <br />
+                <section id="player">
+                    <div id="emotional-capacity-container">
+                        <span>Emotional capacity:</span>
+                        <span id="emotional-capacity">10</span>
+                    </div>
                     <img id="player-img" src="./assets/abigail.stardew.png" alt="Player image" />
                 </section>
                 <section id="daters" class="people">
                     <div id="add-dater">
                         <label>
                             Add a dater!
-                            <br />
                             <input name="name" class="button" />
                             <button class="button">+</button>
                         </label>
