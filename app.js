@@ -4,6 +4,7 @@ import { renderDater } from './toimport.js';
 const playerCapacity = document.getElementById('player-emotional-capacity');
 const playerImg = document.getElementById('player-img');
 const daterList = document.getElementById('dater-list');
+const messageDisplay = document.getElementById('message-display');
 
 /* State */
 let player = {
@@ -33,6 +34,8 @@ let daters = [
         ec: 2,
     },
 ];
+
+let message = 'Howdy';
 /* Events */
 
 /* Display Functions */
@@ -53,6 +56,11 @@ function displayDaters() {
         daterList.append(daterElement);
     }
 }
+
+function displayMessage() {
+    messageDisplay.textContent = message;
+}
 // (don't forget to call any display functions you want to run on page load!)
 displayPlayer();
 displayDaters();
+displayMessage();
