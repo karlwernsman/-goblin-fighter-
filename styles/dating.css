@@ -1,0 +1,73 @@
+* {
+    font-family: 'Cinzel', serif;
+}
+
+#scoreboard {
+    background: lightgoldenrodyellow;
+    height: 60px;
+}
+
+#message-display {
+    background: rgb(230, 189, 173);
+    height: 60px;
+}
+
+.messages {
+    display: grid;
+    place-content: center;
+}
+
+#player {
+    background: rgba(33, 98, 33, 0.5);
+    display: grid;
+    grid-template-rows: 30% auto;
+    width: 250px;
+    height: 275px;
+    /* justify-items: center;
+    align-items: center; */
+    grid-template-columns: 1fr;
+}
+
+#player-img {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 60px;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    padding: 50px;
+}
+
+#daters {
+    background: rgba(0, 99, 0, 0.5);
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.dater-card {
+    background: antiquewhite;
+}
+
+.e-capacity {
+    text-align: center;
+}
+
+.name {
+    text-align: center;
+    color: black;
+}
+
+#emotional-capacity-container {
+    font-size: 0.8em;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+#button {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
