@@ -8,6 +8,7 @@ const playerImg = document.getElementById('player-img');
 const daterList = document.getElementById('dater-list');
 const messageDisplay = document.getElementById('message-display');
 const addDaterForm = document.getElementById('add-dater');
+const scoreboard = document.getElementById('scoreboard');
 
 /* State */
 let player = {
@@ -106,6 +107,11 @@ function displayDaters() {
                 message += `${dater.name} chatted with you. It took ${daterChat} tick(s) off of your emotional capacity. `;
             }
 
+            if (dater.ec < 1) {
+                exhausted++;
+                displayScoreboard();
+            }
+
             displayPlayer();
             displayDaters();
             displayMessage();
@@ -115,6 +121,10 @@ function displayDaters() {
 
 function displayMessage() {
     messageDisplay.textContent = message;
+}
+
+function displayScoreboard() {
+    scoreboard.textContent = `You have exhausted ${exhausted} dater(s).`;
 }
 // (don't forget to call any display functions you want to run on page load!)
 displayPlayer();
