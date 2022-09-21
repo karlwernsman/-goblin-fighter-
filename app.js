@@ -9,6 +9,7 @@ const daterList = document.getElementById('dater-list');
 const messageDisplay = document.getElementById('message-display');
 const addDaterForm = document.getElementById('add-dater');
 const scoreboard = document.getElementById('scoreboard');
+const removeButton = document.getElementById('remove-button');
 
 /* State */
 let player = {
@@ -84,6 +85,18 @@ addDaterForm.addEventListener('submit', (e) => {
     addDaterForm.reset();
 });
 
+removeButton.addEventListener('click', () => {
+    const energizedDaters = [];
+
+    for (const dater of daters) {
+        if (dater.ec > 0) {
+            energizedDaters.push(dater);
+        }
+    }
+    daters = energizedDaters;
+    displayDaters();
+});
+
 /* Display Functions */
 function displayPlayer() {
     playerCapacity.textContent = Math.max(0, player.ec);
@@ -115,13 +128,13 @@ function displayDaters() {
 
             message = '';
             if (playerChat === 0) {
-                message += 'They do not seem to be interested in you. No chatting happened. ';
+                message += 'You are not interested in them. You did not chat back. ';
             } else {
                 message += `You chatted with ${dater.name} and it took ${playerChat} tick(s) off their emotional capacity. You sure are wearing them down. `;
             }
 
             if (daterChat === 0) {
-                message += 'You are not interested in them. No chatting happened. ';
+                message += 'They do not seem to be interested in you. They did not chat back. ';
             } else {
                 message += `${dater.name} chatted with you. It took ${daterChat} tick(s) off of your emotional capacity. `;
             }
