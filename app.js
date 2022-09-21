@@ -58,12 +58,31 @@ const sebastian = {
 
 const playerChats = [0, 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5];
 const daterChats = [0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5];
-const playerTypes = [emily, emily, maru, harvey, harvey, sebastian, sebastian, sebastian];
+const daterTypes = [emily, emily, maru, harvey, harvey, sebastian, sebastian, sebastian];
 
 let exhausted = 0;
 let message = '';
 
 /* Events */
+addDaterForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = new FormData(addDaterForm);
+    const daterType = getRandomItem(daterTypes);
+
+    const dater = {
+        name: form.get('name'),
+        type: daterType.type,
+        ec: daterType.ec,
+    };
+    daters.push(dater);
+
+    message = `${dater.name} has joined the speed dating event!`;
+
+    displayDaters();
+    displayMessage();
+
+    addDaterForm.reset();
+});
 
 /* Display Functions */
 function displayPlayer() {
@@ -129,4 +148,3 @@ function displayScoreboard() {
 // (don't forget to call any display functions you want to run on page load!)
 displayPlayer();
 displayDaters();
-displayMessage();
