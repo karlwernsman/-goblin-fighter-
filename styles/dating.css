@@ -8,7 +8,7 @@
 }
 
 #message-display {
-    background: lightblue;
+    background: rgb(230, 189, 173);
     height: 60px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 #player {
-    background: green;
+    background: rgba(33, 98, 33, 0.5);
     display: grid;
     grid-template-rows: 30% auto;
     width: 250px;
@@ -42,7 +42,7 @@
 }
 
 #daters {
-    background: lightseagreen;
+    background: rgba(0, 99, 0, 0.5);
     display: grid;
     grid-template-columns: auto;
 }
